@@ -12,4 +12,4 @@ document.getElementById("slogan").innerHTML = "For the comfort and rest you dese
 
 document.getElementById("userName").innerHTML = "Hello, " + userName + "! Welcome to the best bed and breakfast you will ever have.";
 
-document.getElementById("Money").innerHTML = "The date is " + neededMonth.getMonth() + "/" + neededDate.getDate() + "/" + neededYear.getFullYear();
+document.getElementById("Okay").innerHTML = "The date is " + neededMonth.getMonth() + "/" + neededDate.getDate() + "/" + neededYear.getFullYear();
