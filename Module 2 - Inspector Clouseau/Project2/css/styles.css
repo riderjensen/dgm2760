@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/* CSS Document */
+/* CSS Reset */
+body, p, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+    
+}
+
+header{
+    background-image: url(images/inspec.jpg);
+    background-repeat: no-repeat;
+    background-color: tan;
+    margin-left: 10%;
+    padding: 6rem 0 0 5%;
+    background-position: 0% 80%;
+    width: 70%;
+}
+header h1{
+    margin-left: 18%;
+    color: #fff;
+    font-size: 4rem;
+    text-shadow: 1px 1px 4px #000;
+}
+
+header h2{
+    color: #fff;
+    margin-left: 18%;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 4px #000;
+}
+main{
+    padding: 2rem 0 0 10%;
+}
+
+main h2, h1{
+    color: #918151;
+    font-size: 2rem;
+}
+
+body{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 300;
+    color: tan;
+    background-color: white;
+    font-size: 16px;
+
+}
+
+ul{
+	padding-left: 3rem;
+}
+
+footer {
+    
+    position: fixed;
+    bottom: 0;
+}
+
+footer p {
+    color: #000;
+    text-align: center;
+    padding: .5rem;
+    font-size: .8rem;
+    font-weight: 600;
+    margin-left: 10rem;
+    background-color: rgb(247, 193, 155);
+}
