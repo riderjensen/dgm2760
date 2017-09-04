@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Guessing Game</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+	<header>
+		<h1 id="company"></h1>
+		<h2 id ="slogan"></h2>
+	</header>
+
+	<MAIN>
+		<h1 id="pageName"></h1>
+		<h2>What I learned</h2>
+		<ul class="objectives">
+		<li>Demonstrate variable scope</li>		
+		<li>Implement functions</li>
+		<li>Implement a multi level if-then-else</li>
+		<li>Use innerHTML to provide user feedback</li>
+		<li>Implement a switch statement</li>
+		<li>Dynamically load a graphic</li>
+		<li>Create and append an image element</li>
+		</ul>
+
+		<h1>Instructions</h1>
+		<p>In this game you try to guess a random number between 1 and 15 in as few tries as possible. You will be awarded a ribbon for your skills. Good luck to you. If you would like to play again, refresh the page.</p>
+
+		<br>
+		<br>
+		<hr>
+
+		<!--Game-->
+		<table>
+			<tr>
+			<td><input type="number" id="userInput"></td>
+			<td><button onclick="randNumFunction()">Click me!</button></td>
+
+			<td><h1 id="numTries"> </h1></td>
+			<td><p id="gameFeedback"> </p></td>
+			<td><p class = "ribbon" id="ribbonInsert"> </p></td>
+			</tr>
+		</table>
+
+
+	</MAIN>
+
+	<footer>
+    	<p>&copy; 2017 &bull; Loops &bull; Created by Rider Jensen</p>
+    </footer>
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+</html>
