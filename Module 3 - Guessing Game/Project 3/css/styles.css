@@ -27,6 +27,7 @@ header h2{
 }
 main{
     padding: 2rem 0 0 10%;
+    margin-right: 10%;
 }
 
 main h2, h1{
@@ -52,10 +53,7 @@ ul{
     float right;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-}
+
 
 footer p {
     color: #000;
@@ -65,4 +63,6 @@ footer p {
     font-weight: 600;
     margin-left: 10rem;
     background-color: #8aacb8;
+    margin-right: 10%;
+
 }
