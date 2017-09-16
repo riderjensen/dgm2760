@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Arborist</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body onload="displayArrayItems()">
+	<header>
+		<h1 id="company"></h1>
+		<h2 id ="slogan"></h2>
+	</header>
+
+
+	<MAIN>
+		<h1 id="pageName"></h1>
+		<h2>What I learned</h2>
+		<ul class="objectives">
+			<li>Students will implement error checking on incoming values</li>		
+			<li>Students will create and manipulate values in an array</li>
+			<li>Students will implement Event Handlers</li>
+			<li>Students will implement Event Listeners</li>
+			<li>Students will pass values to a function using Event Listeners</li>
+		</ul>
+
+		<div class="rightAlign">
+			<h2>The Tree List</h2>
+			<div class="treeList" id="treeList"></div>
+		
+			<h2>Error Message</h2>
+			<p class="errorMessage" id="errors"></p>
+		</div>
+
+
+		<h1>Adding Tree Practice</h1>
+		<button id="addRedwood">Add a Redwood Tree to the End</button>
+		<br>
+		<button id="addPear">Add a Pear Tree to the Start</button>
+		<br>
+		<h1>Removing Tree Practice</h1>
+		<button id="removeFirst">Remove the first tree</button>
+		<br>
+		<button id="removeSecond">Remove the second tree down</button>
+		<br>
+		<button id="removeLast">Remove the last tree</button>
+		<br>
+		<h1>Manipulating the tree list</h1>
+		<button id="sortTrees">Sort the trees alphabetically A - Z</button>
+		<br>
+		<button id="lowerCase">Make all trees lower case</button>
+		<br>
+		<h1>Getting any tree from the list</h1>
+		<button id="nameThree">What is the name of tree number three?</button>
+		<br>
+		<button id="nameFour">What is the name of tree number four?</button>
+		<br>
+		<br>
+
+
+	
+	</MAIN>
+
+	<footer>
+    	<p>&copy; 2017 &bull; Arrays &bull; Created by Rider Jensen</p>
+    </footer>
+</body>
+	<script type="text/javascript" src="js/main.js"""></script>
+</html>
