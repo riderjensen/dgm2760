@@ -41,6 +41,9 @@ x.onclick = addPear;
 //remove first element
 var removeFirst = function(){
 	treeArray.shift();
+	if(treeArray.length == 0){
+		document.getElementById("errors").innerHTML = "There are no items in this list!";
+	}
 	displayArrayItems();	
 };
 
@@ -50,6 +53,9 @@ x.onclick = removeFirst;
 //remove second element
 var removeSecond = function(){
 	treeArray.splice(1, 1);
+	if(treeArray.length < 2){
+		document.getElementById("errors").innerHTML = "There are no items in that position!";
+	}
 	displayArrayItems();	
 };
 
@@ -59,6 +65,9 @@ x.onclick = removeSecond;
 //remove last element
 var removeLast = function(){
 	treeArray.pop();
+	if(treeArray.length == 0){
+		document.getElementById("errors").innerHTML = "There are no items in this list!";
+	}
 	displayArrayItems();	
 };
 
