@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Nonsense</title>
+<title>Pizza Order</title>
 <link href="css/styles.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -18,38 +18,45 @@
 		<h1 id="pageName"></h1>
 		<h2>What I learned</h2>
 		<ul class="objectives">
-			<li>Extract text content from html elements</li>		
-			<li>Convert a string into an array</li>
-			<li>Access elements of an array</li>
-			<li>Escape string chartacters</li>
-			<li>String concatenation</li>
-			<li>Change a string to all lower case</li>
-			<li>Wild Character substitution</li>
+			<li>Create a literal object with properties and methods</li>		
+			<li>Set the properties in an object</li>
+			<li>Access the properties in an object</li>
+			<li>Access the methods of an object</li>
+			<li>Use math operators</li>
+			<li>Use string concatenation</li>
+			<li>Use getElementById and innerHTML to dynamically change text on the screen</li>
 		</ul>
 
-		
-
-
-		<h2>Seven NOUNS</h2>
-		<textarea id="nounTextArea" rows="5" cols="50"></textarea>
-		<h2>Three ADJECTIVES</h2>
-		<textarea id="adjectiveTextArea" rows="5" cols="50"></textarea>
-		<h2>Three VERBS</h2>
-		<textarea id="verbTextArea" rows="5" cols="50"></textarea>
+		<br>
+		<h2>Crust Options</h2>
+		<button onclick="pizzaOrder.crustType='thin'">Thin Crust</button>
+		<button onclick="pizzaOrder.crustType='thick'">Thick Crust</button>
 
 		<br>
-		<button id="storyTime">Tell the story</button>
-		<br>
-		<br>
-		
-		<div>
-			<p id="storyArea1"></p>
-			<p id="storyArea3"></p>
-			<p id="storyArea4"></p>
-		</div>
+		<h2>Topping Options</h2>
+		<button onclick="pizzaOrder.toppingType='sausage'">Sausage</button>
+		<button onclick="pizzaOrder.toppingType='peperoni'">Peperoni</button>
 
 		<br>
-		
+		<h2>Size Options</h2>
+		<button onclick="pizzaOrder.sizeType='small'">Small</button>
+		<button onclick="pizzaOrder.sizeType='large'">Large</button>
+
+		<br>
+		<h2>Time to Eat</h2>
+		<button onclick="pizzaOrder.timeToEat()">Build Pizza</button>
+
+		<br>
+		<h2>Shopping List</h2>
+		<button onclick="pizzaOrder.shoppingList()">Shopping List</button>
+
+		<br>
+		<h2>Message back to the user</h2>
+		<p id="userOutput"></p>
+
+		<br>
+
+
 	
 	</MAIN>
 
