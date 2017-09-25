@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Quizing</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+	<header>
+		<h1 id="company"></h1>
+		<h2 id ="slogan"></h2>
+	</header>
+
+
+	<MAIN>
+		<h1 id="pageName"></h1>
+		<h2>What I learned</h2>
+		<ul class="objectives">
+			<li>Create a literal object with properties and methods</li>		
+			<li>Set the properties in an object</li>
+			<li>Access the properties in an object</li>
+			<li>Access the methods of an object</li>
+			<li>Use math operators</li>
+			<li>Use string concatenation</li>
+			<li>Use getElementById and innerHTML to dynamically change text on the screen</li>
+		</ul>
+
+		
+
+		<button onclick="quiz.displayQuestion()">I am ready to take the quiz! (click me)</button>
+		<p id="question"></p>
+
+		<br>
+		<button onclick="quiz.whatIsRight(1)">Mozzarella</button>
+		<button onclick="quiz.whatIsRight(2)">Chedder</button>
+		<button onclick="quiz.whatIsRight(3)">Pepper Jack</button>
+		<button onclick="quiz.whatIsRight(4)">Grass</button>
+
+		<br>
+		<h2>Feedback</h2>
+		<p id="userOutput"></p>
+
+		<br>
+
+
+	
+	</MAIN>
+
+	<footer>
+    	<p>&copy; 2017 &bull; Literal Objects &bull; Created by Rider Jensen</p>
+    </footer>
+</body>
+	<script type="text/javascript" src="js/main.js"""></script>
+</html>
