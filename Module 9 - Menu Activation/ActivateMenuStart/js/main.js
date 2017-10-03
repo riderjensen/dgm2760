@@ -17,9 +17,9 @@ for(var i = 0; i < menuHrefLocation.length; i++){
 	var myMenuMatch = menuHrefLocation[i].firstChild.getAttribute('href');
 	console.log(myMenuMatch);
 	if(pageName == myMenuMatch){
-		menuHrefLocation[i].parentNode.className = "active";
-		if (menuHrefLocation[i].parentNode.parentNode.parentNode.className == "") {}
-			menuHrefLocation[i].parentNode.parentNode.parentNode.className = "parent";
+		menuHrefLocation[i].className = "active";
+		if (menuHrefLocation[i].parentNode.parentNode.className == "") {}
+			menuHrefLocation[i].parentNode.parentNode.className = "parent";
 	}
 	else{
 		menuHrefLocation[i].parentNode.className="";
