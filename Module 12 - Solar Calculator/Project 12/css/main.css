@@ -1,0 +1,175 @@
+body, p, h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0; }
+
+@media only screen and (max-width: 800px) {
+  .wrapper {
+    margin-left: 1rem;
+    margin-right: 1rem; }
+    .wrapper header {
+      width: 100%;
+      background-image: url(../img/solar.png);
+      background-repeat: no-repeat;
+      background-position: left top;
+      background-size: 150px; }
+      .wrapper header h1 {
+        margin-left: 150px; }
+      .wrapper header h3 {
+        margin-left: 150px; }
+      .wrapper header ul {
+        background-color: white;
+        list-style: none;
+        margin-right: 1rem; }
+        .wrapper header ul li {
+          margin-top: 5px;
+          border: 1px solid black;
+          border-radius: 25px;
+          background-color: #3783B2; }
+          .wrapper header ul li a {
+            text-align: center;
+            display: block;
+            color: black;
+            padding: 16px;
+            text-decoration: none;
+            color: white; }
+          .wrapper header ul li a:hover {
+            border: 1px solid black;
+            border-radius: 25px;
+            background-color: white;
+            color: black; }
+    .wrapper main {
+      clear: both; }
+      .wrapper main form .monthlyPowerConsumption {
+        margin-bottom: 20px; }
+        .wrapper main form .monthlyPowerConsumption legend {
+          font-weight: bold; }
+        .wrapper main form .monthlyPowerConsumption span {
+          display: block;
+          padding: 5px; }
+        .wrapper main form .monthlyPowerConsumption input {
+          padding: 10px; }
+      .wrapper main form .sunshineZone {
+        margin-bottom: 20px; }
+        .wrapper main form .sunshineZone legend {
+          font-weight: bold; }
+        .wrapper main form .sunshineZone figure img {
+          width: 80%; }
+        .wrapper main form .sunshineZone select {
+          padding-right: 100px;
+          padding-top: 20px;
+          padding-bottom: 20px; }
+      .wrapper main form .panelSelection legend {
+        font-weight: bold; }
+      .wrapper main form .panelSelection select {
+        padding-right: 100px;
+        padding-top: 20px;
+        padding-bottom: 20px; }
+      .wrapper main button {
+        margin-top: 20px;
+        padding: 30px;
+        border: 1px solid black;
+        border-radius: 25px;
+        background-color: #3783B2;
+        color: white; }
+      .wrapper main button:hover {
+        border: 1px solid black;
+        border-radius: 25px;
+        background-color: white;
+        color: black; }
+      .wrapper main h2 {
+        padding: 10px; }
+      .wrapper main div {
+        padding: 10px; }
+    .wrapper footer {
+      margin-left: none;
+      margin-right: none;
+      width: 100%;
+      margin-top: 10px;
+      background-color: #3783B2; } }
+/*Desktop Rules*/
+@media only screen and (min-width: 801px) {
+  .wrapper {
+    max-width: 1000px;
+    margin-left: 5rem;
+    margin-right: 5rem; }
+    .wrapper header {
+      width: 100%;
+      background-image: url(../img/solar.png);
+      background-repeat: no-repeat;
+      background-position: left top;
+      background-size: 150px; }
+      .wrapper header h1 {
+        margin-left: 150px; }
+      .wrapper header h3 {
+        margin-left: 150px; }
+      .wrapper header ul {
+        list-style-type: none;
+        overflow: hidden; }
+        .wrapper header ul li {
+          float: left;
+          margin-top: 5px;
+          margin-left: 10px;
+          border: 1px solid black;
+          background-color: #3783B2; }
+          .wrapper header ul li a {
+            text-align: center;
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            color: white; }
+          .wrapper header ul li a:hover {
+            border: 1px solid black;
+            background-color: white;
+            color: black; }
+    .wrapper main form .monthlyPowerConsumption {
+      margin-bottom: 20px; }
+      .wrapper main form .monthlyPowerConsumption legend {
+        font-weight: bold; }
+      .wrapper main form .monthlyPowerConsumption span {
+        display: block;
+        padding: 5px; }
+      .wrapper main form .monthlyPowerConsumption input {
+        padding: 10px; }
+    .wrapper main form .sunshineZone {
+      margin-bottom: 20px; }
+      .wrapper main form .sunshineZone legend {
+        font-weight: bold; }
+      .wrapper main form .sunshineZone figure img {
+        width: 80%; }
+      .wrapper main form .sunshineZone select {
+        padding-right: 100px;
+        padding-top: 20px;
+        padding-bottom: 20px; }
+    .wrapper main form .panelSelection legend {
+      font-weight: bold; }
+    .wrapper main form .panelSelection select {
+      padding-right: 100px;
+      padding-top: 20px;
+      padding-bottom: 20px; }
+    .wrapper main button {
+      margin-top: 20px;
+      padding: 30px;
+      border: 1px solid black;
+      border-radius: 25px;
+      background-color: #3783B2;
+      color: white; }
+    .wrapper main button:hover {
+      border: 1px solid black;
+      border-radius: 25px;
+      background-color: white;
+      color: black; }
+    .wrapper main h2 {
+      padding: 10px; }
+    .wrapper main div {
+      padding: 10px; }
+    .wrapper footer {
+      margin-left: none;
+      margin-right: none;
+      width: 100%;
+      margin-top: 10px;
+      background-color: #3783B2; } }
+.wrapper {
+  font-family: Arial, sans-serif; }
+
+/*# sourceMappingURL=main.css.map */

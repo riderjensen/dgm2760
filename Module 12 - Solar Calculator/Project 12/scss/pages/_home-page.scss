@@ -1,0 +1,12 @@
+// Home Page SCSS
+
+@mixin margin-left-and-bottom($pixel-number){
+	margin-left: $pixel-number;
+	margin-bottom: $pixel-number;
+}
+
+.wrapper{
+	font-family: $font-stack;
+
+}//end wrapper
+

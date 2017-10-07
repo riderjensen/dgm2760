@@ -1,0 +1,122 @@
+// Mobile SCSS
+
+//Phone Rules
+@media only screen and (max-width:800px){
+	.wrapper{
+		margin-left: 1rem;
+		margin-right: 1rem;
+	    header{
+	    	width: 100%;
+	    	background-image: url(../img/solar.png);
+    		background-repeat: no-repeat;
+		    background-position: left top;
+		    background-size: $pixel-width-logo;
+	    	h1{
+	    		margin-left: $pixel-width-logo;
+	    	}
+	    	h3{
+	    		margin-left: $pixel-width-logo;
+	    	}
+	    	ul{
+	    	
+	    		background-color: white;
+				list-style: none;
+				margin-right: 1rem;
+	    		li{
+	    			margin-top: 5px;
+	    			border: 1px solid black;
+	    			border-radius: 25px;
+	    			background-color: $secondary-color;
+
+	    			a{
+	    			text-align: center;
+	    			display: block;
+	    			color: black;
+	    			padding: 32px - 16px;
+	    			text-decoration: none;
+	    			color: white;
+	    			}
+	    			a:hover{
+	    				border: 1px solid black;
+	    				border-radius: 25px;
+	    				background-color: white;
+	    				color: black;
+	    			}
+	    		}
+	    	}//end ul
+	    }//end header
+	    main{
+	    	clear: both;
+	    	form{
+		    	.monthlyPowerConsumption{
+		    		legend{
+		    			font-weight: bold;
+		    		}
+			    		span{
+			    			display: block;
+			    			padding:5px;
+			    		}
+			    		input{
+			    			padding: 10px;
+			    		}
+			    	margin-bottom: 20px;
+		    	}//end monthly power consumption
+		    	.sunshineZone{
+		    		legend{
+		    			font-weight: bold;
+		    		}
+		    		figure{
+		    			img{
+		    				width: 80%;
+		    			}
+		    		}
+		    		select{
+		    			padding-right: 100px;
+		    			padding-top: 20px;
+		    			padding-bottom: 20px;
+		    		}
+		    		margin-bottom: 20px;
+		    	}//end sunshine zone
+		    	.panelSelection{
+		    		legend{
+		    			font-weight: bold;
+		    		}
+	    			select{
+	    				padding-right: 100px;
+	    				padding-top: 20px;
+	    				padding-bottom: 20px;
+
+	    			}
+	    		
+		    	}//end panel selection
+		    }//end form
+		    button{
+		    	margin-top: 20px;
+		    	padding: 30px;
+		    	border: 1px solid black;
+	    		border-radius: 25px;
+	    		background-color: $secondary-color;
+	    		color: white;
+		    }
+		    button:hover{
+				border: 1px solid black;
+				border-radius: 25px;
+				background-color: white;
+				color: black;
+			}
+		    h2{
+		    	padding: 10px;
+		    }
+		    div{
+		    	padding: 10px;
+		    }
+	    }//end main
+	    footer{
+	    	margin-left: none;
+	    	margin-right: none;
+	    	width: 100%;
+	    	margin-top: 10px;
+	    	background-color: $secondary-color;
+	    }
+	}//end wrapper
+}//end media rules
