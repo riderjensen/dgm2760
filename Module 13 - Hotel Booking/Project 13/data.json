@@ -1,0 +1,22 @@
+[   {
+    "name":"Wild West",
+    "description":"Roughing it takes on a new meaning when you bed down in the Old-West. Sleep in a covered wagon, then mosey into 'town' for a good hot bath.",
+    "cost":{"weekend":"$169.00", "weekday":"$149.00"},
+    "details":["36 Inch TV","DVD Player","Full Breakfast Included","Cheesecake Included"],
+    "photo":"images/Wild.jpg"
+    },
+    {
+    "name":"Phantom Of The Opera",
+    "description":"You don't like the opera? Can't understand the lines? You'll catch every nuance in Anniversary Inn's Phantom of the Opera Suite. Poignant love, an aching heart, unrequited affection all vanish away when you settle down in the ornate queen size bed. A mural of the catacombs below the opera house gives the setting a sense of mystery.",
+    "cost":{"weekend":"$269.00", "weekday":"$249.00"},
+    "details":["40 Inch TV","Blu-ray DVD Player","Full Breakfast Included","Cheesecake Included"],
+    "photo":"images/Phantom.jpg"
+    },
+    {
+    "name":"Biker Roadhouse",
+    "description":"Take a fantasy ride down Route 66 on your Harley until you reach The Biker Roadhouse. Park your bike next to the antique Harley located at the end of the well-appointed Biker themed Queen bed. Relax on the couch and watch TV or soak in the jetted tub that is fronted by an old fashioned storefront as if you were in Sturgis, South Dakota.",
+    "cost":{"weekend":"$369.00", "weekday":"$349.00"},
+    "details":["50 Inch TV","DVD Player","King Sized Mattress","Waterfall Shower"],
+    "photo":"images/Biker.jpg"
+    }
+]
