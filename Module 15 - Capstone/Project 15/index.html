@@ -31,8 +31,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-          <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#myLogInModal">Log In</button>
-           <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#mySignUpModal">Sign Up</button>
+          <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#myLogInModal" id="logInButton">Log In</button>
+           <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#mySignUpModal" id="signUpButton">Sign Up</button>
           <ul class="nav navbar-nav navbar-left">
             <li><a href="renting.html">Renting</a></li>
             </li>
@@ -60,7 +60,7 @@
             <form>
                <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
-                <input type="text" class="form-control" id="userNameUserInput" placeholder="Username">
+                <input type="text" class="form-control" id="userNameUserInput" placeholder="Username" value="">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
@@ -74,7 +74,7 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="logInFunction()" >Log In</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="logInFunction()">Log In</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -117,7 +117,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="logInFunction()">Submit</button>
           </div>
         </div>
       </div>
@@ -237,10 +237,10 @@
         <div class="col-lg-6 col-md-8 col-sm-12">
           <form>
             <div class="input-group">
+              <input type="text" class="form-control" placeholder="youremail@something.com">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button">Subscribe!</button>
               </span>
-              <input type="text" class="form-control" placeholder="youremail@something.com">
             </div><!-- /input-group -->
           </form>
           <br>
@@ -253,7 +253,7 @@
   
     <div class="container">
 
-      <div class="row addGrayBackground">
+      <div class="row">
         <div class="col-lg-12">
           
           <h2>This Month's Top Authors</h2>
@@ -262,7 +262,7 @@
       </div>
      
 
-      <div class="row addGrayBackground">
+      <div class="row">
         <div class="col-sm-6 col-md-3">
           <div class="box" class="thumbnail">
             <img src="img/oldManOne.jpg" alt="First Author">
@@ -303,80 +303,16 @@
             </div>
           </div>
         </div>
+
       </div>
+
+       <br>
+       <br>
     
 
-      <!-- End Authors List -->
-      <div class="row">
-        <div class="col-md-12">
-          <br>
-          <br>
-          <h3>Let Us Help You Decide On A Book To Look For!</h3>
-          <!--Accordian Menu -->
-          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingOne">
-                <h4 class="panel-title">
-                  <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    "I want a murder mystery!"
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                <div class="panel-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. 
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingTwo">
-                <h4 class="panel-title">
-                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    "Show me a romance!"
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                <div class="panel-body">
-                   Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingThree">
-                <h4 class="panel-title">
-                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    "I want to read some sci-fi!"
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                <div class="panel-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                </div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading" role="tab" id="headingFour">
-                <h4 class="panel-title">
-                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    "I dont know what I want! Give me something random!"
-                  </a>
-                </h4>
-              </div>
-              <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                <div class="panel-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-                </div>
-              </div>
-            </div>
-          </div>
-          <br>
-        </div>
-      </div> <!--End Deciding book -->
-    </div>
       
-    </div> <!-- /container -->        
+    </div>
+           
     
     <div class="container-fluid addGrayBackground">
      
