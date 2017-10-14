@@ -61,13 +61,18 @@
           </div>
           <div class="modal-body">
             <form>
+
+              <div id="modalLogInErrorMessage" class="col-lg-12 hidden">
+                <p class="errorText">Please correct the errors in red and try again.</p>
+              </div><!-- /.col-lg-6 -->
+
                <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
                 <input type="text" class="form-control" id="userNameUserInput" placeholder="Username" value="">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control" id="logInPass" placeholder="Password">
               </div>
               <div class="checkbox">
                 <label>
@@ -95,9 +100,14 @@
           </div>
           <div class="modal-body">
             <form>
+
+              <div id="modalSignUpErrorMessage" class="col-lg-12 hidden">
+                <p class="errorText">Please correct the errors in red and try again.</p>
+              </div><!-- /.col-lg-6 -->
+
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <input type="email" class="form-control" id="emailInputField" placeholder="Email">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
@@ -105,7 +115,7 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control" id="userInputPassword" placeholder="Password">
                 <p>Password between 8 and 15 characters including*</p>
                 <p>&#9679 One uppercase letter</p>
                 <p>&#9679 One lowercase letter</p>
@@ -142,6 +152,15 @@
       <div class="row">
         <div class="col-lg-12">
           <p>Our simple formula for your books is this: we take the length, width, and height and then get the volume of the book. We then take that value, multiply it by a certain number that helps us to maintain our costs at the bookstore. We then multiply it again based on that factor of what is wrong with it. </p>
+        </div><!-- /.col-lg-6 -->
+        <div class="col-md-6">
+        </div><!-- /.col-lg-6 -->
+      </div><!-- /.row -->
+
+      <div class="row">
+        <br>
+        <div id="bookRepairErrorMessage" class="col-lg-12 hidden">
+          <p class="errorText">Please correct the errors in red and try again.</p>
         </div><!-- /.col-lg-6 -->
         <div class="col-md-6">
         </div><!-- /.col-lg-6 -->

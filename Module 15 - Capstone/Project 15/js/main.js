@@ -3,22 +3,56 @@
 
 function logInFunction(){
 	var userUserName;
+	var logInPass;
 	userUserName = document.getElementById("userNameUserInput").value;
-	console.log(userUserName);
-	if(userUserName != "" && userUserName != null){
+	logInPass = document.getElementById("logInPass").value;
+	if(userUserName == "" || userUserName == null){
+		document.getElementById("userNameUserInput").className += " errorMessage";
+		document.getElementById("logInPass").className = "form-control";
+		document.getElementById("modalLogInErrorMessage").className = "col-lg-12";
+	}
+	else if(logInPass == "" || logInPass == null){
+		document.getElementById("userNameUserInput").className = "form-control";
+		document.getElementById("logInPass").className += " errorMessage";
+		document.getElementById("modalLogInErrorMessage").className = "col-lg-12";
+	}
+	else{
 		//set classes to hide login and sign up buttons and display a welcome message
 		document.getElementById("logInButton").className = "hidden";
 		document.getElementById("signUpButton").className = "hidden";
 		document.getElementById("ulClassHeader").className = "nav navbar-nav navbar-right";
-		document.getElementById("greetingMessage").innerHTML = "Hello " + userUserName + ".";
+		document.getElementById("greetingMessage").innerHTML = "Welcome back " + userUserName + ".";
 	}
 }
 
 function signUpFunction(){
+	var userEmail;
 	var userUserSignUp;	
+	var userPass;
 	userUserSignUp = document.getElementById("userUserSignUp").value;
-	console.log(userUserSignUp);
-	if(userUserSignUp != "" && userUserSignUp != null){
+	userEmail = document.getElementById("emailInputField").value;
+	userPass = document.getElementById("userInputPassword").value;
+	
+
+	if (userEmail == "" || userEmail == null){
+		document.getElementById("emailInputField").className += " errorMessage";
+		document.getElementById("userUserSignUp").className = "form-control";
+		document.getElementById("userInputPassword").className = "form-control";
+		document.getElementById("modalSignUpErrorMessage").className = "col-lg-12";
+	}
+	else if(userUserSignUp == "" || userUserSignUp == null){
+		document.getElementById("emailInputField").className = "form-control";
+		document.getElementById("userUserSignUp").className += " errorMessage";
+		document.getElementById("userInputPassword").className = "form-control";
+		document.getElementById("modalSignUpErrorMessage").className = "col-lg-12";
+	}
+	else if(userPass == "" || userPass == null){
+		document.getElementById("emailInputField").className = "form-control";
+		document.getElementById("userUserSignUp").className = "form-control";
+		document.getElementById("userInputPassword").className += " errorMessage";
+		document.getElementById("modalSignUpErrorMessage").className = "col-lg-12";
+	}
+	else{
 		//set classes to hide login and sign up buttons and display a welcome message
 		document.getElementById("logInButton").className = "hidden";
 		document.getElementById("signUpButton").className = "hidden";
@@ -48,10 +82,29 @@ var bookRepair={
 		userDamage = document.getElementById("bookDamage");
 		userDamageText = userDamage.options[userDamage.selectedIndex].text;
 		userDamageNum = userDamage.options[userDamage.selectedIndex].value;
-		if ((userLength == 0 || userLength == null) || (userWidth == 0 || userWidth == null) || ( userHeight == 0 || userHeight == null)){
-			//display errors in red
+		if (userLength == 0 || userLength == null){
+			document.getElementById("userInputLength").className += " errorMessage";
+			document.getElementById("userInputWidth").className = "form-control";
+			document.getElementById("userInputHeight").className = "form-control";
+			document.getElementById("bookRepairErrorMessage").className = "col-lg-12";
+		}
+		else if(userWidth == 0 || userWidth == null){
+			document.getElementById("userInputLength").className = "form-control";
+			document.getElementById("userInputWidth").className += " errorMessage";
+			document.getElementById("userInputHeight").className = "form-control";
+			document.getElementById("bookRepairErrorMessage").className = "col-lg-12";
+		}
+		else if( userHeight == 0 || userHeight == null){
+			document.getElementById("userInputLength").className = "form-control";
+			document.getElementById("userInputWidth").className = "form-control";
+			document.getElementById("userInputHeight").className += " errorMessage";
+			document.getElementById("bookRepairErrorMessage").className = "col-lg-12";
 		}
 		else{
+		document.getElementById("userInputLength").className = "form-control";
+		document.getElementById("userInputWidth").className = "form-control";
+		document.getElementById("userInputHeight").className = "form-control";
+		document.getElementById("bookRepairErrorMessage").className = "col-lg-12 hidden";
 		bookRepair.calculateCosts(userDamageNum);
 		}		
 	},//end getElements
