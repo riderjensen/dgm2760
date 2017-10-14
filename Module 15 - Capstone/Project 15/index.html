@@ -37,9 +37,7 @@
             <li><a id="greetingMessage" href="#"></a></li>
           </ul>
           <ul class="nav navbar-nav navbar-left">
-            <li><a href="renting.html">Renting</a></li>
-            </li>
-            <li><a href="buying.html">Buying</a></li>
+            <li><a href="buying.html">Buying/Renting</a></li>
             </li>
             <li><a href="bookClub.html">Book Club</a></li>
             </li>
@@ -51,7 +49,7 @@
     </nav>
 
 
-    <!-- Log in Modal -->
+     <!-- Log in Modal -->
     <div class="modal fade" id="myLogInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -61,13 +59,18 @@
           </div>
           <div class="modal-body">
             <form>
+
+              <div id="modalLogInErrorMessage" class="col-lg-12 hidden">
+                <p class="errorText">Please correct the errors in red and try again.</p>
+              </div><!-- /.col-lg-6 -->
+
                <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
                 <input type="text" class="form-control" id="userNameUserInput" placeholder="Username" value="">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control" id="logInPass" placeholder="Password">
               </div>
               <div class="checkbox">
                 <label>
@@ -95,9 +98,14 @@
           </div>
           <div class="modal-body">
             <form>
+
+              <div id="modalSignUpErrorMessage" class="col-lg-12 hidden">
+                <p class="errorText">Please correct the errors in red and try again.</p>
+              </div><!-- /.col-lg-6 -->
+
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <input type="email" class="form-control" id="emailInputField" placeholder="Email">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
@@ -105,7 +113,7 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control" id="userInputPassword" placeholder="Password">
                 <p>Password between 8 and 15 characters including*</p>
                 <p>&#9679 One uppercase letter</p>
                 <p>&#9679 One lowercase letter</p>
@@ -125,7 +133,6 @@
         </div>
       </div>
     </div><!-- End Sign Up Modal -->
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
@@ -141,14 +148,14 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
-          <h2><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Renting</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="renting.html" role="button">Browse Now &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Buying</h2>
+          <h2><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Buying/Renting</h2>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn btn-default" href="buying.html" role="button">Browse Now &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Book Club</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="bookClub.html" role="button">Browse Now &raquo;</a></p>
        </div>
         <div class="col-md-4">
           <h2><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Book Repair</h2>
