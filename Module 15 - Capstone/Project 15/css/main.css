@@ -85,6 +85,9 @@
 .bookList li p{
 	font-size: 1.5rem;
 }
+#cartID{
+	list-style: none;
+}
 
 #clearCart{
 	background-color: red;

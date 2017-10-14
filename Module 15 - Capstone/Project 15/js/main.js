@@ -4,20 +4,20 @@
 var userUserName;
 var userUserSignUp;
 var blizzRealmSize;
+var bookArrayLength;
 
-console.log(sessvars.myObj.name);
 
 
 function checkUserName(){
-	if(sessvars.myObj.name != "" && sessvars.myObj.name != "undefined"){
+	if(sessvars.myObj.name != "" && sessvars.myObj.name != undefined){
 		document.getElementById("logInButton").className = "hidden";
 		document.getElementById("signUpButton").className = "hidden";
 		document.getElementById("ulClassHeader").className = "nav navbar-nav navbar-right";
 		document.getElementById("greetingMessage").innerHTML = "Welcome back " + sessvars.myObj.name;
+		if (location.href == "http://riderjensen.com/wowApp/buying.html") {
 		document.getElementById("cartModal").className = "btn btn-default navbar-btn navbar-right";
+		}
 	}
-	
-
 }
 checkUserName();
 
@@ -46,7 +46,9 @@ function logInFunction(){
 		document.getElementById("signUpButton").className = "hidden";
 		document.getElementById("ulClassHeader").className = "nav navbar-nav navbar-right";
 		document.getElementById("greetingMessage").innerHTML = "Welcome back " + userUserName;
+		if (location.href == "http://riderjensen.com/wowApp/buying.html") {
 		document.getElementById("cartModal").className = "btn btn-default navbar-btn navbar-right";
+		}
 	}
 }
 
@@ -85,7 +87,9 @@ function signUpFunction(){
 		document.getElementById("signUpButton").className = "hidden";
 		document.getElementById("ulClassHeader").className = "nav navbar-nav navbar-right";
 		document.getElementById("greetingMessage").innerHTML = "Hello " + userUserSignUp + ", dont forget to verify your account.";
+		if (location.href == "http://riderjensen.com/wowApp/buying.html") {
 		document.getElementById("cartModal").className = "btn btn-default navbar-btn navbar-right";
+		}
 	}
 }
 
@@ -171,11 +175,8 @@ function blizzAPI(){
 }
 
 askRealmList.onload = function(){
-	console.log("readching");
 	if (location.href == "http://riderjensen.com/wowApp/buying.html") {
-		console.log("readching1");
 		if (askRealmList.status == 200) {
-			console.log("readching2");
 			rObj = JSON.parse(askRealmList.responseText);
 			blizzRealmSize = rObj.realms.length;
 			for (var i = 0; i < rObj.realms.length; i++){
@@ -214,6 +215,7 @@ askRealmList.onload = function(){
 blizzAPI();
 //check which are checked and get the value and display in modal
 function checkChecked(){
+	sessvars.myObj = {Array: []};
 	var deleteElements = document.getElementById("modalCheckOut");
 		while(deleteElements.hasChildNodes()){
 			deleteElements.removeChild(deleteElements.lastChild);
@@ -230,6 +232,8 @@ function checkChecked(){
 			listElement.appendChild(paraTag);
 			var modalElement = document.getElementById("modalCheckOut");
 			modalElement.appendChild(listElement);
+			sessvars.myObj.Array.push(bookName);
+			bookArrayLength = sessvars.myObj.Array.length;
 		}
 	}
 }
@@ -239,4 +243,36 @@ function clearCart(){
 		while(deleteElements.hasChildNodes()){
 			deleteElements.removeChild(deleteElements.lastChild);
 		}
+		for (var i = 0; i < bookArrayLength; i++) {
+			sessvars.myObj.Array.pop();
+		}
+}
+
+function showCart(){
+	var totalBook = 0;
+	document.getElementById("cartButton").className = "hidden";
+	for (var i = 0; i < sessvars.myObj.Array.length; i++) {
+		var randomBookNumber = randomNumber();
+		var listElement = document.createElement("LI");
+		var paraTag = document.createElement("p");
+		var pNode = document.createTextNode("$" + randomBookNumber+ " for "+sessvars.myObj.Array[i]);
+		paraTag.appendChild(pNode);
+		listElement.appendChild(paraTag);
+		var element = document.getElementById("cartID");
+		element.appendChild(listElement);
+		totalBook = totalBook + randomBookNumber;
+	}
+		var paymentListElement = document.createElement("LI");
+		var paymentParaTag = document.createElement("h4");
+		var paymentNode = document.createTextNode("Your total cost is $" + totalBook);
+		paymentParaTag.appendChild(paymentNode);
+		paymentListElement.appendChild(paymentParaTag);
+		var paymentElement = document.getElementById("cartID");
+		paymentElement.appendChild(paymentListElement);
+
+}
+
+function randomNumber(){
+	randNum = Math.floor(Math.random() * (31 - 1)) + 1;
+	return randNum;
 }

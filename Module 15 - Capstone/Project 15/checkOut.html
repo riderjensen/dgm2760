@@ -13,10 +13,9 @@
         <script type="text/javascript" src="js/sessvars.js"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
-
     <body>
 
-      <nav class="navbar navbar-inverse navbar-default navbar-fixed-top" data-spy="affix">
+    <nav class="navbar navbar-inverse navbar-default navbar-fixed-top" data-spy="affix">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -34,7 +33,6 @@
 
           <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#myLogInModal" id="logInButton">Log In</button>
           <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#mySignUpModal" id="signUpButton">Sign Up</button>
-          <button type="button" class="btn btn-default navbar-btn navbar-right hidden" data-toggle="modal" data-target="#myCartModal" id="cartModal" onclick="checkChecked()">
             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
           </button>
 
@@ -141,53 +139,121 @@
     </div><!-- End Sign Up Modal -->
 
 
-    <!-- Cart Modal -->
-    <div class="modal fade" id="myCartModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Shopping Cart</h4>
-          </div>
-          <div class="modal-body">
-            <ul id="modalCheckOut">
-            </ul>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" id="clearCart" onclick="clearCart()">Clear Cart</button>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary"><a href="checkOut.html">Check Out</a></button>
-          </div>
-        </div>
-      </div>
-    </div><!-- End Cart Modal -->
-
-
-
+    
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
         <br>
-        <h1>Welcome to the Catalog!</h1>
-        <p>Remember to log in before you can check out. When you have selected all the books you would like, just click the cart icon in the top right of the screen, review your order, and proceed to check out. Books listed here are for sale but anything listed here is also for rent. To rent these books, come down to our store to select and sign up with our rental program.</p>
+        <h1>Check Out</h1>
+        <p>Thank you for looking at our selection and deciding on some great books that you could take home! We here at Cozy Corner know that you are going to love your selections. Please fill out all the fields below and you will recieve a shipping notice in your email.</p>
       </div>
     </div>
 
+
+  
     <div class="container">
+
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Cart</h3>
+            <ul id="cartID">
+              
+            </ul>
+          </div>
+        </div>
+
+       <!--Button -->
       <div class="row">
         <div class="col-md-12">
           <br>
-          <ul id="dataDump" class="bookList">
-            
-          </ul>
+          <p><a class="btn btn-primary btn-lg" onclick="showCart()" id="cartButton" role="button">Show Cart</a></p>
         </div>
       </div>
 
-    </div>
-    
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Payment Details</h3>
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Card Number</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="carNumber" placeholder="Card Number">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="nameOnCard" class="col-sm-2 control-label">Name on the Card</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="nameOnCard" placeholder="Name on the card">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="expirationDate" class="col-sm-2 control-label">Expiration Date</label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" id="expirationDate" placeholder="00/1990" size="7">
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
 
-   
-    
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <h3>Shipping Address</h3>
+            <form class="form-horizontal">
+            <div class="form-group">
+              <label for="packageName" class="col-sm-2 control-label">Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="packageName" placeholder="Full Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="streetAddress" class="col-sm-2 control-label">Address</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="streetAddress" placeholder="Street Address">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputCity" class="col-sm-2 control-label">City</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="inputCity" placeholder="City">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="pacakgeState" class="col-sm-2 control-label">State</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="pacakgeState" placeholder="State">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="packageZip" class="col-sm-2 control-label">Zip Code</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="packageZip" placeholder="State">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="packageZip" class="col-sm-2 control-label">Phone Number</label>
+              <div class="col-sm-4">
+                <input type="phone" class="form-control" id="packageZip" placeholder="999-999-9999">
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+
+        <!--Button -->
+        <div class="row">
+          <div class="col-md-12">
+            <br>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Place Order</a></p>
+          </div>
+        </div>
+
+
+      </div><!--End container -->
+
+
     <div class="container-fluid addGrayBackground">
      
       <!-- Contact and Return -->
