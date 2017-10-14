@@ -126,3 +126,37 @@ var bookRepair={
 
 };//end object
 
+
+//Getting realm names
+var askRealmList = new XMLHttpRequest();
+
+function blizzAPI(){
+	console.log("Hello");
+	var requestURL = "https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=ez9mqbh86f3sugau2fg4anumnjk67zmp";
+	askRealmList.open('GET', requestURL, true);
+	askRealmList.responseType = "text";
+	askRealmList.send(null);
+	
+
+}
+
+askRealmList.onload = function(){
+	
+	console.log(askRealmList.status);
+	if (askRealmList.status == 200) {
+		rObj = JSON.parse(askRealmList.responseText);
+		console.log(rObj);
+		console.log(rObj.realms[0]);
+		console.log(rObj.realms[0].name);
+		console.log(rObj.realms.length);
+		for (var i = 0; i < rObj.realms.length; i++){
+			var para = document.createElement("p");
+			var node = document.createTextNode(rObj.realms[i].name);
+			para.appendChild(node);
+			var element = document.getElementById("dataDump");
+			element.appendChild(para);
+		}
+	}
+};
+
+blizzAPI();
