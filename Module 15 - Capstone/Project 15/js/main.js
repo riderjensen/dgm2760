@@ -1,11 +1,34 @@
 /*jslint browser:true */
 "use strict()";
 
+var userUserName;
+var userUserSignUp;
+
+
+function checkUserName(){
+	if(sessvars.myObj.name != "" && sessvars.myObj.name != "undefined"){
+		document.getElementById("logInButton").className = "hidden";
+		document.getElementById("signUpButton").className = "hidden";
+		document.getElementById("ulClassHeader").className = "nav navbar-nav navbar-right";
+		document.getElementById("greetingMessage").innerHTML = "Welcome back " + sessvars.myObj.name;
+		document.getElementById("cartModal").className = "btn btn-default navbar-btn navbar-right";
+	}
+	
+
+}
+
+window.onload = checkUserName;
+
+
 function logInFunction(){
-	var userUserName;
+
 	var logInPass;
 	userUserName = document.getElementById("userNameUserInput").value;
 	logInPass = document.getElementById("logInPass").value;
+
+	sessvars.myObj = {name: userUserName};	
+	console.log(sessvars.myObj);
+
 	if(userUserName == "" || userUserName == null){
 		document.getElementById("userNameUserInput").className += " errorMessage";
 		document.getElementById("logInPass").className = "form-control";
@@ -21,17 +44,20 @@ function logInFunction(){
 		document.getElementById("logInButton").className = "hidden";
 		document.getElementById("signUpButton").className = "hidden";
 		document.getElementById("ulClassHeader").className = "nav navbar-nav navbar-right";
-		document.getElementById("greetingMessage").innerHTML = "Welcome back " + userUserName + ".";
+		document.getElementById("greetingMessage").innerHTML = "Welcome back " + userUserName;
+		document.getElementById("cartModal").className = "btn btn-default navbar-btn navbar-right";
 	}
 }
 
 function signUpFunction(){
 	var userEmail;
-	var userUserSignUp;	
 	var userPass;
+	
 	userUserSignUp = document.getElementById("userUserSignUp").value;
 	userEmail = document.getElementById("emailInputField").value;
 	userPass = document.getElementById("userInputPassword").value;
+
+	sessvars.myObj = {name: userUserSignUp};
 	
 
 	if (userEmail == "" || userEmail == null){
@@ -58,6 +84,7 @@ function signUpFunction(){
 		document.getElementById("signUpButton").className = "hidden";
 		document.getElementById("ulClassHeader").className = "nav navbar-nav navbar-right";
 		document.getElementById("greetingMessage").innerHTML = "Hello " + userUserSignUp + ", dont forget to verify your account.";
+		document.getElementById("cartModal").className = "btn btn-default navbar-btn navbar-right";
 	}
 }
 
@@ -119,7 +146,7 @@ var bookRepair={
 
 	printCosts: function(){
 		document.getElementById("bookCalculations").innerHTML = "The length of your book is "+ userLength +
-		" inches, the width "+userWidth+ " inches, and the th length is " +userLength + " inches. That means the volume of your book is " 
+		" inches, the width "+userWidth+ " inches, and the the length is " +userLength + " inches. That means the volume of your book is " 
 		+ getvolume + " cubic inches. You also selected that the issue was " +userDamageText +". With all this in mind, we may charge close to $"
 		+ fixedCost + ". For a more specific quote, please bring your book into our shop and we will take a look at it!";
 	}//end print
@@ -131,7 +158,6 @@ var bookRepair={
 var askRealmList = new XMLHttpRequest();
 
 function blizzAPI(){
-	console.log("Hello");
 	var requestURL = "https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=ez9mqbh86f3sugau2fg4anumnjk67zmp";
 	askRealmList.open('GET', requestURL, true);
 	askRealmList.responseType = "text";
@@ -159,4 +185,4 @@ askRealmList.onload = function(){
 	}
 };
 
-blizzAPI();
+
