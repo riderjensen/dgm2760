@@ -15,7 +15,7 @@
     </head>
     <body>
 
-        <nav class="navbar navbar-inverse navbar-default navbar-fixed-top" data-spy="affix">
+      <nav class="navbar navbar-inverse navbar-default navbar-fixed-top" data-spy="affix">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -31,8 +31,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-          <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#myLogInModal">Log In</button>
-           <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#mySignUpModal">Sign Up</button>
+          <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#myLogInModal" id="logInButton">Log In</button>
+          <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#mySignUpModal" id="signUpButton">Sign Up</button>
+          <ul id="ulClassHeader" class="nav navbar-nav navbar-right hidden">
+            <li><a id="greetingMessage" href="#"></a></li>
+          </ul>
           <ul class="nav navbar-nav navbar-left">
             <li><a href="renting.html">Renting</a></li>
             </li>
@@ -58,9 +61,9 @@
           </div>
           <div class="modal-body">
             <form>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+               <div class="form-group">
+                <label for="exampleInputEmail1">Username</label>
+                <input type="text" class="form-control" id="userNameUserInput" placeholder="Username" value="">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
@@ -74,7 +77,7 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Log In</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="logInFunction()">Log In</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -98,7 +101,7 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
-                <input type="text" class="form-control" id="exampleInputName2" placeholder="Username">
+                <input type="text" class="form-control" id="userUserSignUp" placeholder="Username">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
@@ -117,7 +120,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="signUpFunction()">Submit</button>
           </div>
         </div>
       </div>
@@ -134,15 +137,40 @@
 
 
     <div class="container">
-      <!-- Width of book -->
+
+       <!-- Length of book -->
       <div class="row">
+        <div class="col-lg-12">
+          <p>Our simple formula for your books is this: we take the length, width, and height and then get the volume of the book. We then take that value, multiply it by a certain number that helps us to maintain our costs at the bookstore. We then multiply it again based on that factor of what is wrong with it. </p>
+        </div><!-- /.col-lg-6 -->
         <div class="col-md-6">
-          <br>
+        </div><!-- /.col-lg-6 -->
+      </div><!-- /.row -->
+
+      <!-- Length of book -->
+      <div class="row">
+        <div class="col-lg-6">
           <div class="input-group">
             <span class="input-group-addon">
-              Width
+              Length in inches
             </span>
-            <input type="text" class="form-control" aria-label="...">
+            <input id="userInputLength" type="number" class="form-control" aria-label="...">
+          </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+        <div class="col-md-6">
+        </div><!-- /.col-lg-6 -->
+      </div><!-- /.row -->
+
+
+      <!-- Width of book -->
+      <div class="row">
+        <br>
+        <div class="col-lg-6">
+          <div class="input-group">
+            <span class="input-group-addon">
+              Width in inches
+            </span>
+            <input id="userInputWidth" type="number" class="form-control" aria-label="...">
           </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
         <div class="col-md-6">
@@ -151,13 +179,13 @@
 
         <!-- height of book -->
        <div class="row">
-        <div class="col-md-6">
+        <div class="col-lg-6">
           <br>
           <div class="input-group">
             <span class="input-group-addon">
-              Height
+              Height in inches
             </span>
-            <input type="text" class="form-control" aria-label="...">
+            <input id="userInputHeight" type="number" class="form-control" aria-label="...">
           </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
         <div class="col-md-6">
@@ -169,14 +197,14 @@
       <div class="row">
         <div class="col-md-6">
           <br>
-            <select class="form-control">
-              <option value="one">Choose What Is Wrong</option>
-              <option value="two">Broken Spine</option>
-              <option value="three">Torn Pages</option>
-              <option value="four">Ripped Cover</option>
-              <option value="five">Water Damage</option>
-              <option value="five">Fire Damage</option>
-              <option value="five">Other Damage Not Listed</option>
+          <p>What is wrong with your book?</p>
+            <select id="bookDamage" class="form-control">
+              <option value="1">Broken Spine</option>
+              <option value="1.25">Torn Pages</option>
+              <option value="1.5">Ripped Cover</option>
+              <option value="1.75">Water Damage</option>
+              <option value="2">Fire Damage</option>
+              <option value="2.25">Other Damage Not Listed</option>
           </select>
         </div>
         <div class="col-md-6">
@@ -186,12 +214,20 @@
       <div class="row">
         <div class="col-md-6">
           <br>
-          <button class="btn btn-default" type="button">Calculate</button>
+          <button onclick="bookRepair.getElements()" class="btn btn-default" type="button">Calculate</button>
         </div>
         <div class="col-md-6">
         </div>
       </div>
 
+      <div class="row">
+        <div class="col-lg-12">
+          <br>
+          <p id="bookCalculations"></p>
+        </div>
+        <div class="col-md-6">
+        </div>
+      </div>
 
     
       <!-- Newsletter Sign up -->
