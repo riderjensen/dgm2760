@@ -3,6 +3,9 @@
 
 var userUserName;
 var userUserSignUp;
+var blizzRealmSize;
+
+console.log(sessvars.myObj.name);
 
 
 function checkUserName(){
@@ -16,8 +19,7 @@ function checkUserName(){
 	
 
 }
-
-window.onload = checkUserName;
+checkUserName();
 
 
 function logInFunction(){
@@ -27,7 +29,6 @@ function logInFunction(){
 	logInPass = document.getElementById("logInPass").value;
 
 	sessvars.myObj = {name: userUserName};	
-	console.log(sessvars.myObj);
 
 	if(userUserName == "" || userUserName == null){
 		document.getElementById("userNameUserInput").className += " errorMessage";
@@ -158,31 +159,84 @@ var bookRepair={
 var askRealmList = new XMLHttpRequest();
 
 function blizzAPI(){
-	var requestURL = "https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=ez9mqbh86f3sugau2fg4anumnjk67zmp";
-	askRealmList.open('GET', requestURL, true);
-	askRealmList.responseType = "text";
-	askRealmList.send(null);
+
+	if (location.href == "http://riderjensen.com/wowApp/buying.html") {
+		var requestURL = "https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=ez9mqbh86f3sugau2fg4anumnjk67zmp";
+		askRealmList.open('GET', requestURL, true);
+		askRealmList.responseType = "text";
+		askRealmList.send(null);
+	}
 	
 
 }
 
 askRealmList.onload = function(){
-	
-	console.log(askRealmList.status);
-	if (askRealmList.status == 200) {
-		rObj = JSON.parse(askRealmList.responseText);
-		console.log(rObj);
-		console.log(rObj.realms[0]);
-		console.log(rObj.realms[0].name);
-		console.log(rObj.realms.length);
-		for (var i = 0; i < rObj.realms.length; i++){
-			var para = document.createElement("p");
-			var node = document.createTextNode(rObj.realms[i].name);
-			para.appendChild(node);
-			var element = document.getElementById("dataDump");
-			element.appendChild(para);
+	console.log("readching");
+	if (location.href == "http://riderjensen.com/wowApp/buying.html") {
+		console.log("readching1");
+		if (askRealmList.status == 200) {
+			console.log("readching2");
+			rObj = JSON.parse(askRealmList.responseText);
+			blizzRealmSize = rObj.realms.length;
+			for (var i = 0; i < rObj.realms.length; i++){
+				//create list element
+				var listElement = document.createElement("LI");
+				//create input tag
+				var inputTag = document.createElement("INPUT");
+				//create p tag
+				var paraTag = document.createElement("p");
+
+				var pNode = document.createTextNode("A story of " + rObj.realms[i].battlegroup + " written in " + rObj.realms[i].timezone + " depicting the story of " + rObj.realms[i].slug + " and his life.");
+				//tell input tag it is a checkbox
+				inputTag.setAttribute("type", "checkbox");
+				var stringCheckedBox = "checkedBox" +i;
+				inputTag.setAttribute("id", stringCheckedBox);
+				inputTag.setAttribute("value", rObj.realms[i].name);
+				//create contents text
+				var node = document.createTextNode(rObj.realms[i].name);
+				var labelElement = document.createElement("LABEL");
+				//add text to LI
+				labelElement.appendChild(node);
+
+				labelElement.appendChild(inputTag);
+				listElement.appendChild(labelElement);
+				paraTag.appendChild(pNode);
+				listElement.appendChild(paraTag);
+				
+				var element = document.getElementById("dataDump");
+				element.appendChild(listElement);
+				
+			}
 		}
 	}
 };
 
+blizzAPI();
+//check which are checked and get the value and display in modal
+function checkChecked(){
+	var deleteElements = document.getElementById("modalCheckOut");
+		while(deleteElements.hasChildNodes()){
+			deleteElements.removeChild(deleteElements.lastChild);
+		}
+	for (var i = 0; i < blizzRealmSize; i++) {
+		var idFinder = "checkedBox" + i;
+		
+		if (document.getElementById(idFinder).checked){
+			var bookName = document.getElementById(idFinder).value;
+			var paraTag = document.createElement("p");
+			var pNode = document.createTextNode(bookName);
+			paraTag.appendChild(pNode);
+			var listElement = document.createElement("LI");
+			listElement.appendChild(paraTag);
+			var modalElement = document.getElementById("modalCheckOut");
+			modalElement.appendChild(listElement);
+		}
+	}
+}
 
+function clearCart(){
+	var deleteElements = document.getElementById("modalCheckOut");
+		while(deleteElements.hasChildNodes()){
+			deleteElements.removeChild(deleteElements.lastChild);
+		}
+}

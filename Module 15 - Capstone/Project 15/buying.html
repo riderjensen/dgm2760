@@ -14,7 +14,7 @@
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
 
-    <body onload="blizzAPI()">
+    <body>
 
       <nav class="navbar navbar-inverse navbar-default navbar-fixed-top" data-spy="affix">
       <div class="container">
@@ -34,7 +34,7 @@
 
           <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#myLogInModal" id="logInButton">Log In</button>
           <button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#mySignUpModal" id="signUpButton">Sign Up</button>
-          <button type="button" class="btn btn-default navbar-btn navbar-right hidden" data-toggle="modal" data-target="#myCartModal" id="cartModal">
+          <button type="button" class="btn btn-default navbar-btn navbar-right hidden" data-toggle="modal" data-target="#myCartModal" id="cartModal" onclick="checkChecked()">
             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
           </button>
 
@@ -140,6 +140,8 @@
       </div>
     </div><!-- End Sign Up Modal -->
 
+
+    <!-- Cart Modal -->
     <div class="modal fade" id="myCartModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -148,15 +150,18 @@
             <h4 class="modal-title">Shopping Cart</h4>
           </div>
           <div class="modal-body">
-            <p>There is nothing in your cart yet...</p>
+            <ul id="modalCheckOut">
+              
+            </ul>
           </div>
           <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="clearCart" onclick="clearCart()">Clear Cart</button>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Check Out</button>
           </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+        </div>
+      </div>
+    </div><!-- End Cart Modal -->
 
 
 
@@ -164,21 +169,23 @@
     <div class="jumbotron">
       <div class="container">
         <br>
-        <h1>Welcome to the Cozy Corner!</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet metus mauris. Sed nec mauris egestas est dictum tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Mauris neque tellus, ullamcorper vitae feugiat vitae, posuere et elit. Curabitur ullamcorper quis purus ac pulvinar. Duis libero ipsum, molestie consequat accumsan et, consectetur a magna. Nunc vitae vestibulum eros. Nam scelerisque cursus rhoncus. </p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        <h1>Welcome to the Catalog!</h1>
+        <p>Remember to log in before you can check out. When you have selected all the books you would like, just click the cart icon in the top right of the screen, review your order, and proceed to check out.</p>
       </div>
     </div>
 
-    <div class="row">
+    <div class="container">
+      <div class="row">
         <div class="col-md-12">
           <br>
-          <select>
+          <ul id="dataDump" class="bookList">
             
-          </select>
-          <div id="dataDump"></div>
+          </ul>
         </div>
       </div>
+
+    </div>
+    
 
    
     
