@@ -7,7 +7,6 @@ var blizzRealmSize;
 var bookArrayLength;
 
 
-
 function checkUserName(){
 	if(sessvars.myObj.name != "" && sessvars.myObj.name != undefined){
 		document.getElementById("logInButton").className = "hidden";
@@ -175,6 +174,7 @@ function blizzAPI(){
 }
 
 askRealmList.onload = function(){
+
 	if (location.href == "http://riderjensen.com/wowApp/buying.html") {
 		if (askRealmList.status == 200) {
 			rObj = JSON.parse(askRealmList.responseText);
@@ -275,4 +275,9 @@ function showCart(){
 function randomNumber(){
 	randNum = Math.floor(Math.random() * (31 - 1)) + 1;
 	return randNum;
+}
+
+function displayCatalog(){
+	sessvars.myObj = {name: ""};
+	location.reload();
 }
