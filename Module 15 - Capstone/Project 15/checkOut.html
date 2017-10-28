@@ -13,7 +13,7 @@
         <script type="text/javascript" src="js/sessvars.js"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
-    <body>
+    <body onload="showCart()">
 
     <nav class="navbar navbar-inverse navbar-default navbar-fixed-top" data-spy="affix">
       <div class="container">
@@ -162,13 +162,6 @@
           </div>
         </div>
 
-       <!--Button -->
-      <div class="row">
-        <div class="col-md-12">
-          <br>
-          <p><a class="btn btn-primary btn-lg" onclick="showCart()" id="cartButton" role="button">Show Cart</a></p>
-        </div>
-      </div>
 
       <div class="row">
         <div class="col-md-12">
@@ -294,6 +287,7 @@
           </div>
         </div>
     </div><!--/container-fluid -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
 
       <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
      

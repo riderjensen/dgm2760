@@ -173,6 +173,8 @@ function blizzAPI(){
 
 }
 
+var blizzChecker = 0;
+
 askRealmList.onload = function(){
 
 	if (location.href == "http://riderjensen.com/wowApp/buying.html") {
@@ -206,6 +208,8 @@ askRealmList.onload = function(){
 				
 				var element = document.getElementById("dataDump");
 				element.appendChild(listElement);
+
+			
 				
 			}
 		}
@@ -213,6 +217,7 @@ askRealmList.onload = function(){
 };
 
 blizzAPI();
+
 //check which are checked and get the value and display in modal
 function checkChecked(){
 	sessvars.myObj = {Array: []};
@@ -250,7 +255,6 @@ function clearCart(){
 
 function showCart(){
 	var totalBook = 0;
-	document.getElementById("cartButton").className = "hidden";
 	for (var i = 0; i < sessvars.myObj.Array.length; i++) {
 		var randomBookNumber = randomNumber();
 		var listElement = document.createElement("LI");
@@ -260,7 +264,7 @@ function showCart(){
 		listElement.appendChild(paraTag);
 		var element = document.getElementById("cartID");
 		element.appendChild(listElement);
-		totalBook = totalBook + randomBookNumber;
+		totalBook += randomBookNumber;
 	}
 		var paymentListElement = document.createElement("LI");
 		var paymentParaTag = document.createElement("h4");

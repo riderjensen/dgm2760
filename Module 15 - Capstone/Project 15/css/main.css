@@ -89,8 +89,8 @@
 	list-style: none;
 }
 
-#clearCart{
-	background-color: red;
+#clearCart:hover{
+	border-color: red;
 }
 .checkOutButton{
 	color: white;
