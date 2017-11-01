@@ -18,6 +18,9 @@
 	font-size: 2.5rem;
 }
 
+.glyphicon-warning-sign{
+	color:red;
+}
 
 .carousel-caption{
 	text-shadow: 2px 1px #000;
@@ -95,7 +98,9 @@
 .checkOutButton{
 	color: white;
 }
-
+.button{
+	background-color: red;
+}
 
 
 

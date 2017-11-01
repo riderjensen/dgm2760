@@ -5,6 +5,7 @@ var userUserName;
 var userUserSignUp;
 var blizzRealmSize;
 var bookArrayLength;
+var badCounter = 0;
 
 
 function checkUserName(){
@@ -21,7 +22,10 @@ function checkUserName(){
 checkUserName();
 
 
+
+
 function logInFunction(){
+
 
 	var logInPass;
 	userUserName = document.getElementById("userNameUserInput").value;
@@ -33,11 +37,13 @@ function logInFunction(){
 		document.getElementById("userNameUserInput").className += " errorMessage";
 		document.getElementById("logInPass").className = "form-control";
 		document.getElementById("modalLogInErrorMessage").className = "col-lg-12";
+		document.getElementById("logInButtonError").className = "glyphicon glyphicon-warning-sign";
 	}
 	else if(logInPass == "" || logInPass == null){
 		document.getElementById("userNameUserInput").className = "form-control";
 		document.getElementById("logInPass").className += " errorMessage";
 		document.getElementById("modalLogInErrorMessage").className = "col-lg-12";
+		document.getElementById("logInButtonError").className = "glyphicon glyphicon-warning-sign";
 	}
 	else{
 		//set classes to hide login and sign up buttons and display a welcome message
@@ -67,18 +73,21 @@ function signUpFunction(){
 		document.getElementById("userUserSignUp").className = "form-control";
 		document.getElementById("userInputPassword").className = "form-control";
 		document.getElementById("modalSignUpErrorMessage").className = "col-lg-12";
+		document.getElementById("signUpButtonError").className = "glyphicon glyphicon-warning-sign";
 	}
 	else if(userUserSignUp == "" || userUserSignUp == null){
 		document.getElementById("emailInputField").className = "form-control";
 		document.getElementById("userUserSignUp").className += " errorMessage";
 		document.getElementById("userInputPassword").className = "form-control";
 		document.getElementById("modalSignUpErrorMessage").className = "col-lg-12";
+		document.getElementById("signUpButtonError").className = "glyphicon glyphicon-warning-sign";
 	}
 	else if(userPass == "" || userPass == null){
 		document.getElementById("emailInputField").className = "form-control";
 		document.getElementById("userUserSignUp").className = "form-control";
 		document.getElementById("userInputPassword").className += " errorMessage";
 		document.getElementById("modalSignUpErrorMessage").className = "col-lg-12";
+		document.getElementById("signUpButtonError").className = "glyphicon glyphicon-warning-sign";
 	}
 	else{
 		//set classes to hide login and sign up buttons and display a welcome message
@@ -285,3 +294,4 @@ function displayCatalog(){
 	sessvars.myObj = {name: ""};
 	location.reload();
 }
+
