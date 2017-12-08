@@ -168,20 +168,20 @@
           <form class="form-horizontal">
             <div class="form-group">
               <label for="inputEmail3" class="col-sm-2 control-label">Card Number</label>
-              <div class="col-sm-10">
-                <input type="number" class="form-control" id="carNumber" placeholder="Card Number">
+              <div class="col-sm-6">
+                <input type="number" class="form-control" id="carNumber" placeholder="Card Number" required>
               </div>
             </div>
             <div class="form-group">
               <label for="nameOnCard" class="col-sm-2 control-label">Name on the Card</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="nameOnCard" placeholder="Name on the card">
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="nameOnCard" placeholder="Name on the card" required>
               </div>
             </div>
             <div class="form-group">
               <label for="expirationDate" class="col-sm-2 control-label">Expiration Date</label>
-              <div class="col-sm-10">
-                  <input type="text" class="form-control" id="expirationDate" placeholder="00/1990" size="7">
+              <div class="col-sm-6">
+                  <input type="text" class="form-control" id="expirationDate" placeholder="00/1990" size="7" required>
                 </div>
               </div>
           </form>
@@ -196,38 +196,44 @@
             <form class="form-horizontal">
             <div class="form-group">
               <label for="packageName" class="col-sm-2 control-label">Name</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="packageName" placeholder="Full Name">
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="packageName" placeholder="Full Name" required>
               </div>
             </div>
             <div class="form-group">
               <label for="streetAddress" class="col-sm-2 control-label">Address</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="streetAddress" placeholder="Street Address">
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="streetAddress" placeholder="Street Address" required>
               </div>
             </div>
             <div class="form-group">
               <label for="inputCity" class="col-sm-2 control-label">City</label>
-              <div class="col-sm-4">
-                <input type="text" class="form-control" id="inputCity" placeholder="City">
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="inputCity" placeholder="City" required>
               </div>
             </div>
             <div class="form-group">
               <label for="pacakgeState" class="col-sm-2 control-label">State</label>
-              <div class="col-sm-4">
-                <input type="text" class="form-control" id="pacakgeState" placeholder="State">
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="pacakgeState" placeholder="State" required>
               </div>
             </div>
             <div class="form-group">
               <label for="packageZip" class="col-sm-2 control-label">Zip Code</label>
-              <div class="col-sm-4">
-                <input type="number" class="form-control" id="packageZip" placeholder="99999" size="5">
+              <div class="col-sm-6">
+                <input type="number" class="form-control" id="packageZip" placeholder="99999" size="5" required>
               </div>
             </div>
             <div class="form-group">
-              <label for="packageZip" class="col-sm-2 control-label">Phone Number</label>
-              <div class="col-sm-4">
-                <input type="phone" class="form-control" id="packageZip" placeholder="999-999-9999" size="10">
+              <label for="packageZip" class="col-sm-2 control-label">Phone Number (Not Required)</label>
+              <div class="col-sm-6">
+                <input type="phone" class="form-control" id="packagePhone" placeholder="999-999-9999" size="10">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="packageZip" class="col-sm-2 control-label">Email Address</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="packageEmail" placeholder="youremail@address.com" required>
               </div>
             </div>
           </form>
